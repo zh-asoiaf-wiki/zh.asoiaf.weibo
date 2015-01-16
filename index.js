@@ -13,6 +13,7 @@ var globalVar =
 	"debug": true, 
 	"access_token":"74be5a09fc620255953f11ed46cb6c44"
 }
+
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
@@ -41,5 +42,4 @@ app.get('/access_token', function(request, response) {
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });
-
 
