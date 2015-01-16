@@ -113,7 +113,7 @@ app.listen(app.get('port'), function() {
 			if (globalVar.debug){
 				console.log(data);
 			}
-			if （statuses[0] == null)
+			if （data.statuses[0] == null)
 				return;
 			globalVar.lastMentionId = data.statuses[0].id;
 
@@ -142,8 +142,7 @@ app.listen(app.get('port'), function() {
 		if(globalVar.lastMentionInCommentsId == 0 ){
 			return;
 		}
-		if （statuses[0] == null)
-			return;
+
 		var para = {
 		    "source": Weibo.appKey.appKey,
 		    "access_token": globalVar.access_token,
@@ -153,7 +152,9 @@ app.listen(app.get('port'), function() {
 		Weibo.Comments.mentions(para, function(data){
 			if (globalVar.debug){
 				console.log(data);
-			}		
+			}	
+			if (data.comments[0] == null)
+				return;	
 			globalVar.lastMentionInCommentsId = data.comments[0].id;
 
 			for (mention in data.comments){
