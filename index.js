@@ -7,11 +7,11 @@ var adapter = require('./adapter.js');
 var express = require('express');
 var globalVar = 
 {
-	"code": 0,
+	"code": "f9d9bd4fb0cfc9951ceeb26984880fc4",
 	"lastMentionId" : 0,
 	"lastMentionInCommentsId": 0, 
 	"debug": true, 
-	"access_token":"74be5a09fc620255953f11ed46cb6c44"
+	"access_token":"2.00rVrrrCblWJNE9bfb3884beZx5dnC"
 }
 
 var app = express();
