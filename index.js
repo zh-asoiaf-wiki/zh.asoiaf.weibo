@@ -18,8 +18,11 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
-
 app.get('/', function(request, response) {
+	response.send('Welcome!');
+});
+
+app.get('/auth', function(request, response) {
 	globalVar.code = request.code;
   	response.redirect('/access_token');
 });
