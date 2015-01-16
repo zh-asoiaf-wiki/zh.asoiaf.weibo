@@ -113,6 +113,8 @@ app.listen(app.get('port'), function() {
 			if (globalVar.debug){
 				console.log(data);
 			}
+			if （statuses[0] == null)
+				return;
 			globalVar.lastMentionId = data.statuses[0].id;
 
 			for (mention in data.statuses){
@@ -138,8 +140,10 @@ app.listen(app.get('port'), function() {
 		 Thus, we will abort this job if no record found.
 		*/
 		if(globalVar.lastMentionInCommentsId == 0 ){
-			return
+			return;
 		}
+		if （statuses[0] == null)
+			return;
 		var para = {
 		    "source": Weibo.appKey.appKey,
 		    "access_token": globalVar.access_token,
