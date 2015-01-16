@@ -21,8 +21,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(request, response) {
 	globalVar.code = request.code;
-  	response.send('Authenticated!');
-  	res.redirect('/access_token');
+  	response.redirect('/access_token');
 });
 
 app.get('/access_token', function(request, response) {
