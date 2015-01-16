@@ -1,5 +1,5 @@
 {
     "appKey":"3858894607",
     "appSecret":"29625396137fc382c0c46f38a0ea97c2",
-    "redirectUrl":"https://zh-asoiaf-weibo.herokuapp.com/"
+    "redirectUrl":"https://zh-asoiaf-weibo.herokuapp.com/auth"
 }
