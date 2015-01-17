@@ -8,11 +8,11 @@ var adapter = require('./adapter.js');
 var express = require('express');
 var globalVar = 
 {
-	"code": "5981a76427904339d4737d3c56720ef3",
+	"code": "1c39f884e6a369cd87089e4c44a8ad6d",
 	"lastMentionId" : 0,
 	"lastMentionInCommentsId": 0, 
 	"debug": true, 
-	"access_token":"2.00koSbxFblWJNEdf2682b10c92QEbD",
+	"access_token":"2.00rVrrrCblWJNE9bfb3884beZx5dnC",
 	"character_days_in_power":0,
 	"character":"无"
 }
