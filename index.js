@@ -24,7 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.get('/', function(request, response) {
 	var echostr = request.query.echostr;
 	console.log(echostr);
-	respond.send(echostr);
+	response.send(echostr);
 });
 
 app.get('/auth', function(request, response) {
