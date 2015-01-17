@@ -79,6 +79,9 @@ app.listen(app.get('port'), function() {
 		}
 		globalVar.lastMentionInCommentsId = data.comments[0].id;
 	});
+	if(globalVar.debug){
+		adapter.specialStatus(Weibo.appKey.appKey,globalVar.access_token,"most viewed");
+	}
 
 
 
@@ -128,8 +131,16 @@ app.listen(app.get('port'), function() {
 
 			for (mention in data.statuses){
 				var username = data.statuses[mention].user.screen_name;
+				if (data.statuses[mention].retweeted_status!=null){
+					if (content.indexOf('@') > content.indexOf('/') && content.indexOf('/')!= -1 ){
+						return;
+						/* 这里有个bug，待解决*/
+					}
+				}
 				var content = data.statuses[mention].text.replace(/(|^)@\S+/,'');
+				content = content.substring(0, content.indexOf('//'));
 				var id = data.statuses[mention].id;
+
 				if (data.statuses[mention].user.allow_all_comment){
 					adapter.comment(Weibo.appKey.appKey, globalVar.access_token, content, id, null);
 					sleep.sleep(5);
