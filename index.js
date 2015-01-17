@@ -22,7 +22,9 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.get('/', function(request, response) {
-	response.send('Welcome!');
+	var echostr = request.query.echostr;
+	console.log(echostr);
+	respond.send(echostr);
 });
 
 app.get('/auth', function(request, response) {
@@ -30,11 +32,6 @@ app.get('/auth', function(request, response) {
   	response.redirect('/access_token');
 });
 
-app.get('/fan', function(request, response){
-	var echostr = request.query.echostr;
-	console.log(echostr);
-	respond.send(echostr);
-});
 
 app.get('/access_token', function(request, response) {
 	var jsonParas = {
