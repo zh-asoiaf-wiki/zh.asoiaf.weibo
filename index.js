@@ -31,7 +31,7 @@ app.get('/auth', function(request, response) {
 });
 
 app.get('/fan', function(request, response){
-	var echostr = request.echostr;
+	var echostr = request.query.echostr;
 	respond.send(echostr);
 });
 
