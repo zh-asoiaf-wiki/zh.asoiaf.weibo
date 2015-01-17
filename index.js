@@ -32,6 +32,7 @@ app.get('/auth', function(request, response) {
 
 app.get('/fan', function(request, response){
 	var echostr = request.query.echostr;
+	console.log(echostr);
 	respond.send(echostr);
 });
 
