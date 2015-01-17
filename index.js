@@ -28,7 +28,7 @@ app.get('/', function(request, response) {
 });
 
 app.get('/auth', function(request, response) {
-	globalVar.code = request.code;
+	globalVar.code = request.query.code;
   	response.redirect('/access_token');
 });
 
