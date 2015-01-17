@@ -4,6 +4,7 @@ var sleep = require('sleep');
 var schedule = require('node-schedule');
 var adapter = require('./adapter.js');
 
+
 var express = require('express');
 var globalVar = 
 {
@@ -11,7 +12,9 @@ var globalVar =
 	"lastMentionId" : 0,
 	"lastMentionInCommentsId": 0, 
 	"debug": true, 
-	"access_token":"2.00koSbxFblWJNEdf2682b10c92QEbD"
+	"access_token":"2.00koSbxFblWJNEdf2682b10c92QEbD",
+	"character_days_in_power":0,
+	"character":"无"
 }
 
 var app = express();
@@ -98,6 +101,7 @@ app.listen(app.get('port'), function() {
 	//     console.log(data);
 	// });
 
+
 	var rule = new schedule.RecurrenceRule();
 	rule.second = 1;
 
@@ -178,5 +182,14 @@ app.listen(app.get('port'), function() {
 			}
 		});
 	});
+	rule = new schedule.RecurrenceRule();
+	rule.hour = 18;
+	rule.minute = 0;
+	var postMostViewedCharacter = schedule.scheduleJob(rule, function(){
+		adapter.specialStatus(Weibo.appKey.appKey,globalVar.access_token,"most viewed");
+
+
+	});
+
 });
 

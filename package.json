@@ -11,7 +11,8 @@
     "node-schedule": "~0.1.15",
     "zh.asoiaf.utility":">0.1.0",
     "sleep":"^1.2.x",
-    "nodeweibo":"^2.0.x"
+    "nodeweibo":"^2.0.x",
+    "request":"^2.5.1"
   },
   "engines": {
     "node": "0.10.x"
