@@ -12,7 +12,10 @@
     "zh.asoiaf.utility":">0.1.0",
     "sleep":"^1.2.x",
     "nodeweibo":"^2.0.x",
-    "request":"^2.5.1"
+    "request":"^2.5.1",
+    "bufferlist":"0.1.0",
+    "form-data":"~0.2.0",
+    "levenshtein-edit-distance":"0.1.4"
   },
   "engines": {
     "node": "0.10.x"

@@ -80,8 +80,8 @@ app.listen(app.get('port'), function() {
 		globalVar.lastMentionInCommentsId = data.comments[0].id;
 	});
 	if(globalVar.debug){
-		adapter.specialStatus(Weibo.appKey.appKey,globalVar.access_token,"most viewed");
-	}
+ 		//adapter.random(Weibo.appKey.appKey,globalVar.access_token);
+ 	}
 
 
 
@@ -131,13 +131,14 @@ app.listen(app.get('port'), function() {
 
 			for (mention in data.statuses){
 				var username = data.statuses[mention].user.screen_name;
+				var content = data.statuses[mention].text;
 				if (data.statuses[mention].retweeted_status!=null){
-					if (content.indexOf('@') > content.indexOf('/') && content.indexOf('/')!= -1 ){
+					if (content.indexOf('@') > content.indexOf('//') && content.indexOf('//')!= -1 ){
 						return;
 						/* 这里有个bug，待解决*/
 					}
 				}
-				var content = data.statuses[mention].text.replace(/(|^)@\S+/,'');
+				content = content.replace(/(|^)@\S+/,'');
 				content = content.substring(0, content.indexOf('//'));
 				var id = data.statuses[mention].id;
 
@@ -194,12 +195,17 @@ app.listen(app.get('port'), function() {
 		});
 	});
 	rule = new schedule.RecurrenceRule();
-	rule.hour = 18;
-	rule.minute = 0;
+	rule.hour = 8;
+	rule.minute = 30;
 	var postMostViewedCharacter = schedule.scheduleJob(rule, function(){
 		adapter.specialStatus(Weibo.appKey.appKey,globalVar.access_token,"most viewed");
 
 
+	});
+	rule = new schedule.RecurrenceRule();
+	rule.hour = [9, 11, 13, 14, 15, 16, 17, 20, 21];
+	var postRandomArticle = schedule.scheduleJob(rule, function(){
+		adapter.random(Weibo.appKey.appKey,globalVar.access_token);
 	});
 
 });
