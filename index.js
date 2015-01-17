@@ -30,6 +30,11 @@ app.get('/auth', function(request, response) {
   	response.redirect('/access_token');
 });
 
+app.get('/fan', function(request, response){
+	var echostr = request.echostr;
+	respond.send(echostr);
+});
+
 app.get('/access_token', function(request, response) {
 	var jsonParas = {
 	    code:globalVar.code,
