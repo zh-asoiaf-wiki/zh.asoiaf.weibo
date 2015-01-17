@@ -38,8 +38,9 @@ app.get('/access_token', function(request, response) {
 			console.log(data);
 		}
 	    globalVar.access_token = data.access_token;
+	    response.send('Authenticated!');
 	});
-  	response.send('Authenticated!');
+  	
 });
 
 
@@ -96,6 +97,7 @@ app.listen(app.get('port'), function() {
 	// Weibo.OAuth2.access_token(jsonParas,function(data){
 	//     console.log(data);
 	// });
+
 	var rule = new schedule.RecurrenceRule();
 	rule.second = 1;
 
@@ -125,10 +127,10 @@ app.listen(app.get('port'), function() {
 				var content = data.statuses[mention].text.replace(/(|^)@\S+/,'');
 				var id = data.statuses[mention].id;
 				if (data.statuses[mention].user.allow_all_comment){
-					adapter.comment(Weibo.appKey.appKey, access_token, content, id, null);
+					adapter.comment(Weibo.appKey.appKey, globalVar.access_token, content, id, null);
 					sleep.sleep(5);
 				}else{		
-					adapter.status(Weibo.appKey.appKey, access_token, content, id, null);
+					adapter.status(Weibo.appKey.appKey, globalVar.access_token, content, username);
 					sleep.sleep(5);
 
 				}
