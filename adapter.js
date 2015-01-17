@@ -38,7 +38,7 @@ module.exports = {
 					var para = {
 					    "source": source,
 					    "access_token": access_token,
-					    "comment": obj.abstract.substring(0,110)+"... http://zh.asoiaf.wikia.com/index.php?curid=" + items[0].id,
+					    "comment": obj.abstract.substring(0,110)+"... http://zh.asoiaf.wikia.com/index.php?curid=" + obj.id,
 					    "id" : id,
 					    "cid" : cid
 					}
