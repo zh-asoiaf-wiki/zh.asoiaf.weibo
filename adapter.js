@@ -28,7 +28,7 @@ module.exports = {
 				    "comment": msg == null ? items[0].abstract.substring(0,120)+"... http://zh.asoiaf.wikia.com/index.php?curid=" + items[0].id : msg,
 				    "id" : id
 				}
-				if(msg != MSG_ERR && msg != MSG_NOFOUND){
+				if(msg != globalVar.MSG_ERR && msg != globalVar.MSG_NOFOUND){
 					Weibo.Comments.create(para, function(data){
 						if (globalVar.debug){
 							console.log(data);
@@ -43,7 +43,7 @@ module.exports = {
 				    "id" : id,
 				    "cid" : cid
 				}
-				if(msg != MSG_ERR && msg != MSG_NOFOUND){
+				if(msg != globalVar.MSG_ERR && msg != globalVar.MSG_NOFOUND){
 					Weibo.Comments.reply(para, function(data){
 						if (globalVar.debug){
 							console.log(data);
@@ -70,7 +70,7 @@ module.exports = {
 			    "access_token": access_token,
 			    "status": msg == null ? "@"+username+" "+items[0].abstract.substring(0,110)+"... http://zh.asoiaf.wikia.com/index.php?curid=" + items[0].id : msg,  
 			}
-			if(msg != MSG_ERR && msg != MSG_NOFOUND){
+			if(msg != globalVar.MSG_ERR && msg != globalVar.MSG_NOFOUND){
 
 				Weibo.Statuses.update(para, function(data){
 					if (globalVar.debug){
