@@ -204,6 +204,7 @@ app.listen(app.get('port'), function() {
 	});
 	rule = new schedule.RecurrenceRule();
 	rule.hour = [9, 11, 13, 14, 15, 16, 17, 20, 21];
+	rule.minute = 0;
 	var postRandomArticle = schedule.scheduleJob(rule, function(){
 		adapter.random(Weibo.appKey.appKey,globalVar.access_token);
 	});
