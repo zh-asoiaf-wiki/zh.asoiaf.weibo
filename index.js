@@ -141,7 +141,7 @@ app.listen(app.get('port'), function() {
 						/* Hard code is bad... To be changed*/
 					}
 				}
-				content = content.replace(/(|^)@\S+/,'');
+				content = content.replace(/(|^)@\S+/g,'').replace(/ /g,'');;
 				content = content.substring(0, content.indexOf('//'));
 				var id = data.statuses[mention].id;
 
