@@ -9,7 +9,7 @@
   "dependencies": {
     "express": "~4.9.x",
     "node-schedule": "~0.1.15",
-    "zh.asoiaf.utility":"^0.2.0",
+    "zh.asoiaf.utility":"0.2.0",
     "sleep":"^1.2.x",
     "nodeweibo":"^2.0.x",
     "request":"^2.5.1",

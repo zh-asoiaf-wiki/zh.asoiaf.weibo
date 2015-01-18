@@ -10,12 +10,12 @@ var globalVar = {
 		"debug": true, 
 		"MSG_NOFOUND":"没找到相关信息。", 
 		"MSG_ERR":"没玉米了，服务器罢工了。",
-		"character_days_in_power":1,
-		"character":"琼恩·雪诺"
+		"character_days_in_power":2,
+		"character":"丹妮莉丝·坦格利安"
 	};
 module.exports = {
 	comment: function(source, access_token, arg_query, arg_id, arg_cid){
-		var query = arg_query.replace(/ /g,'');
+		var query = arg_query;
 		var id = arg_id;
 		var cid = arg_cid;
 		wikia.info({title:query}, function(err, obj){
