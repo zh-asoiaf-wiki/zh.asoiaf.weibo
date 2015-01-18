@@ -136,9 +136,9 @@ app.listen(app.get('port'), function() {
 				var username = data.statuses[mention].user.screen_name;
 				var content = data.statuses[mention].text;
 				if (data.statuses[mention].retweeted_status!=null){
-					if (content.indexOf('@') > content.indexOf('//') && content.indexOf('//')!= -1 ){
+					if (content.indexOf('@冰与火之歌中文维基') > content.indexOf('//') && content.indexOf('//')!= -1 ){
 						return;
-						/* 这里有个bug，待解决*/
+						/* Hard code is bad... To be changed*/
 					}
 				}
 				content = content.replace(/(|^)@\S+/,'');
