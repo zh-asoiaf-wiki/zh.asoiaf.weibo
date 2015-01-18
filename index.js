@@ -142,7 +142,10 @@ app.listen(app.get('port'), function() {
 					}
 				}
 				content = content.replace(/(|^)@\S+/g,'').replace(/ /g,'');;
-				content = content.substring(0, content.indexOf('//'));
+				if (content.indexOf('//')!= -1){
+					content = content.substring(0, content.indexOf('//'));					
+				}
+
 				var id = data.statuses[mention].id;
 
 				if (data.statuses[mention].user.allow_all_comment){
