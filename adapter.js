@@ -15,7 +15,7 @@ var globalVar = {
 	};
 module.exports = {
 	comment: function(source, access_token, arg_query, arg_id, arg_cid){
-		var query = arg_query;
+		var query = arg_query.replace(/ /g,'');
 		var id = arg_id;
 		var cid = arg_cid;
 		wikia.info({title:query}, function(err, obj){
