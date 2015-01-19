@@ -152,8 +152,8 @@ module.exports = {
 					var obj = {};
 
 					obj.title = decodeURI(winner);
-					obj.width = 200;
-					obj.height = 100;
+					obj.width = 360;
+					obj.height = 480;
 					obj['abstract'] = 120;
 					if (globalVar.debug){
 						console.log(obj);
@@ -232,8 +232,8 @@ var _statusWithImage= function(source, access_token, title){
 	var msg;
 	var imageurl;
 	obj.title = title;
-	obj.width = 200;
-	obj.height = 100;
+	obj.width = 360;
+	obj.height = 480;
 	obj['abstract'] = 500;
 
 	wikia.info(obj, function(err, data){
