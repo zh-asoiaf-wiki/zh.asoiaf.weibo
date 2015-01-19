@@ -10,7 +10,7 @@ var globalVar = {
 		"debug": true, 
 		"MSG_NOFOUND":"没找到相关信息。", 
 		"MSG_ERR":"没玉米了，服务器罢工了。",
-		"character_days_in_power":2,
+		"character_days_in_power":3,
 		"character":"丹妮莉丝·坦格利安"
 	};
 module.exports = {
@@ -173,7 +173,7 @@ module.exports = {
 								msg += "连续第";
 								msg += globalVar.character_days_in_power;
 								msg += "天登上榜首。";
-								msg += data.basepath;
+								msg += "http://zh.asoiaf.wikia.com";
 								msg += "/index.php?curid=";
 								msg += data.id;
 								imageurl = data.thumbnail;	
