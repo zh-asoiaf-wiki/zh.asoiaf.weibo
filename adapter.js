@@ -42,7 +42,7 @@ module.exports = {
 				console.log(content);
 			}
 		});
-	}
+	},
 	comment: function(source, access_token, arg_query, arg_id, arg_cid){
 		var query = arg_query;
 		var id = arg_id;
