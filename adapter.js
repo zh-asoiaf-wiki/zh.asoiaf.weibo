@@ -25,21 +25,21 @@ var globalVar = {
 	};
 module.exports = {
 	init: function(){
-		client.getArticle("Mediawiki:top/character", function(err, datat){
+		client.getArticle("Mediawiki:top/character", function(err, data){
 			if (err){
 				return;
 			}
-			globalVar.character = content;
+			globalVar.character = data;
 			if(globalVar.debug)
-				console.log(content);
+				console.log(data);
 		});
-		client.getArticle("Mediawiki:top/character_days_in_power", function(err, datat){
+		client.getArticle("Mediawiki:top/character_days_in_power", function(err, data){
 			if (err){
 				return;
 			}
-			globalVar.character_days_in_power = content;
+			globalVar.character_days_in_power = data;
 			if(globalVar.debug){
-				console.log(content);
+				console.log(data);
 			}
 		});
 	},
