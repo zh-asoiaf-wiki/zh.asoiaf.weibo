@@ -25,17 +25,22 @@ var globalVar = {
 	};
 module.exports = {
 	init: function(){
-		bot.getArticle("portal:top/character", function(err, datat){
+		bot.getArticle("Mediawiki:top/character", function(err, datat){
 			if (err){
 				return;
 			}
 			globalVar.character = content;
+			if(globalVar.debug)
+				console.log(content);
 		});
-		bot.getArticle("portal:top/character_days_in_power", function(err, datat){
+		bot.getArticle("Mediawiki:top/character_days_in_power", function(err, datat){
 			if (err){
 				return;
 			}
 			globalVar.character_days_in_power = content;
+			if(globalVar.debug){
+				console.log(content);
+			}
 		});
 	}
 	comment: function(source, access_token, arg_query, arg_id, arg_cid){
