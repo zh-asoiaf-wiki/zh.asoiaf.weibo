@@ -10,11 +10,11 @@ var bot = require('nodemw');
 
   // pass configuration object
   var client = new bot({
-    server: 'zh.asoiaf.wikia.com',  // host name of MediaWiki-powered site
-    path: '/wiki',                  // path to api.php script
-    debug: false ,                // is more verbose when set to true
-    username: process.env.PASSWORD,
-	password: process.env.USERNAME
+    "server": 'zh.asoiaf.wikia.com',  // host name of MediaWiki-powered site
+    "path": '',                  // path to api.php script
+    "debug": false ,                // is more verbose when set to true
+    "username": process.env.PASSWORD,
+	"password": process.env.USERNAME
   });
 var globalVar = {
 		"debug": true, 
