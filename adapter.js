@@ -28,7 +28,7 @@ module.exports = {
 		client.getArticle("Mediawiki:top/character", function(err, data){
 			if (err){
 				if(globalVar.debug){
-					console.log("err, default:character "+data);
+					console.log("err, default:character "+globalVar.character);
 				}
 				return;
 			}
@@ -39,7 +39,7 @@ module.exports = {
 		client.getArticle("Mediawiki:top/character_days_in_power", function(err, data){
 			if (err){
 				if(globalVar.debug){
-					console.log("err, default:character_days_in_power "+data);
+					console.log("err, default:character_days_in_power "+globalVar.character_days_in_power);
 				}
 				return;
 			}
