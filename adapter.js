@@ -260,10 +260,10 @@ module.exports = {
 	
 
 }
-var _updateCharacter(){
+var _updateCharacter = function(){
 	bot.edit("Top/character", globalVar.character,"bot",null);
 }
-var _updateCharacterDaysInPower(){
+var _updateCharacterDaysInPower = function(){
 	bot.edit("Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
 }
 var _statusWithImage= function(source, access_token, title){
