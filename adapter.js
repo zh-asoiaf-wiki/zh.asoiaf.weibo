@@ -31,7 +31,7 @@ module.exports = {
 			}
 			globalVar.character = data;
 			if(globalVar.debug)
-				console.log(data);
+				console.log("character_days_in_power "+data);
 		});
 		client.getArticle("Mediawiki:top/character_days_in_power", function(err, data){
 			if (err){
@@ -39,7 +39,7 @@ module.exports = {
 			}
 			globalVar.character_days_in_power = data;
 			if(globalVar.debug){
-				console.log(data);
+				console.log("character_days_in_power "+data);
 			}
 		});
 	},
