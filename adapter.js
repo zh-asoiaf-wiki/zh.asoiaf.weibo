@@ -6,6 +6,16 @@ var request = require('request').defaults({ encoding: null });;
 var BufferList = require('bufferlist').BufferList;
 var FormData = require('form-data');
 var levenshtein = require('levenshtein-edit-distance');
+var bot = require('nodemw');
+
+  // pass configuration object
+  var client = new bot({
+    server: 'zh.asoiaf.wikia.com',  // host name of MediaWiki-powered site
+    path: '/wiki',                  // path to api.php script
+    debug: false ,                // is more verbose when set to true
+    username: process.env.PASSWORD,
+	password: process.env.USERNAME
+  });
 var globalVar = {
 		"debug": true, 
 		"MSG_NOFOUND":"没找到相关信息。", 
@@ -14,6 +24,20 @@ var globalVar = {
 		"character":"丹妮莉丝·坦格利安"
 	};
 module.exports = {
+	init: function(){
+		bot.getArticle("portal:top/character", function(err, datat){
+			if (err){
+				return;
+			}
+			globalVar.character = content;
+		});
+		bot.getArticle("portal:top/character_days_in_power", function(err, datat){
+			if (err){
+				return;
+			}
+			globalVar.character_days_in_power = content;
+		});
+	}
 	comment: function(source, access_token, arg_query, arg_id, arg_cid){
 		var query = arg_query;
 		var id = arg_id;
@@ -177,7 +201,8 @@ module.exports = {
 								msg += "/index.php?curid=";
 								msg += data.id;
 								imageurl = data.thumbnail;	
-								globalVar.character_days_in_power++;						
+								globalVar.character_days_in_power++;	
+								_updateCharacterDaysInPower();						
 							}else{
 								msg += "。";
 								msg += data.title;
@@ -189,7 +214,9 @@ module.exports = {
 								msg += data.id;
 								imageurl = data.thumbnail;	
 								globalVar.character = data.title;	
-								globalVar.character_days_in_power = 1;							
+								globalVar.character_days_in_power = 1;	
+								_updateCharacter();	
+								_updateCharacterDaysInPower();					
 							}
 
 							
@@ -201,6 +228,7 @@ module.exports = {
 					if(globalVar.debug){
 						console.log(err);
 						globalVar.character_days_in_power++;
+						_updateCharacterDaysInPower();	
 					}
 				}
 			});
@@ -226,6 +254,12 @@ module.exports = {
 
 	
 
+}
+var _updateCharacter(){
+	bot.edit("Top/character", globalVar.character,"bot",null);
+}
+var _updateCharacterDaysInPower(){
+	bot.edit("Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
 }
 var _statusWithImage= function(source, access_token, title){
 	var obj = {};

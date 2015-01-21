@@ -56,7 +56,7 @@ app.listen(app.get('port'), function() {
     initialize weibo before using it
  	*/
 	Weibo.init(setting);
-
+	adapter.init();
 
 	var para = {
 	    "source": Weibo.appKey.appKey,
