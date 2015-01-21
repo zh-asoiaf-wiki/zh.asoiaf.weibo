@@ -25,7 +25,7 @@ var globalVar = {
 	};
 module.exports = {
 	init: function(){
-		bot.getArticle("Mediawiki:top/character", function(err, datat){
+		client.getArticle("Mediawiki:top/character", function(err, datat){
 			if (err){
 				return;
 			}
@@ -33,7 +33,7 @@ module.exports = {
 			if(globalVar.debug)
 				console.log(content);
 		});
-		bot.getArticle("Mediawiki:top/character_days_in_power", function(err, datat){
+		client.getArticle("Mediawiki:top/character_days_in_power", function(err, datat){
 			if (err){
 				return;
 			}
@@ -261,10 +261,10 @@ module.exports = {
 
 }
 var _updateCharacter = function(){
-	bot.edit("Top/character", globalVar.character,"bot",null);
+	client.edit("Top/character", globalVar.character,"bot",null);
 }
 var _updateCharacterDaysInPower = function(){
-	bot.edit("Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
+	client.edit("Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
 }
 var _statusWithImage= function(source, access_token, title){
 	var obj = {};
