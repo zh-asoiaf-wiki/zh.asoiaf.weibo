@@ -20,21 +20,27 @@ var globalVar = {
 		"debug": true, 
 		"MSG_NOFOUND":"没找到相关信息。", 
 		"MSG_ERR":"没玉米了，服务器罢工了。",
-		"character_days_in_power":3,
+		"character_days_in_power":5,
 		"character":"丹妮莉丝·坦格利安"
 	};
 module.exports = {
 	init: function(){
 		client.getArticle("Mediawiki:top/character", function(err, data){
 			if (err){
+				if(globalVar.debug){
+					console.log("err, default:character "+data);
+				}
 				return;
 			}
 			globalVar.character = data;
 			if(globalVar.debug)
-				console.log("character_days_in_power "+data);
+				console.log("character"+data);
 		});
 		client.getArticle("Mediawiki:top/character_days_in_power", function(err, data){
 			if (err){
+				if(globalVar.debug){
+					console.log("err, default:character_days_in_power "+data);
+				}
 				return;
 			}
 			globalVar.character_days_in_power = data;
