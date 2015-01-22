@@ -208,9 +208,10 @@ module.exports = {
 								msg += "连续第";
 								msg += globalVar.character_days_in_power;
 								msg += "天登上榜首。";
-								msg += "http://zh.asoiaf.wikia.com";
-								msg += "/index.php?curid=";
-								msg += data.id;
+								// msg += "http://zh.asoiaf.wikia.com";
+								// msg += "/index.php?curid=";
+								// msg += data.id;
+								msg += "http://zh.asoiaf.wikia.com/wiki/Special:Top/most_visited";
 								imageurl = data.thumbnail;	
 								globalVar.character_days_in_power++;	
 								_updateCharacterDaysInPower();						
@@ -220,9 +221,10 @@ module.exports = {
 								msg += "取代了";
 								msg += globalVar.character;
 								msg += "登上榜首。";
-								msg += "http://zh.asoiaf.wikia.com";
-								msg += "/index.php?curid=";
-								msg += data.id;
+								// msg += "http://zh.asoiaf.wikia.com";
+								// msg += "/index.php?curid=";
+								// msg += data.id;
+								msg += "http://zh.asoiaf.wikia.com/wiki/Special:Top/most_visited";
 								imageurl = data.thumbnail;	
 								globalVar.character = data.title;	
 								globalVar.character_days_in_power = 1;	
