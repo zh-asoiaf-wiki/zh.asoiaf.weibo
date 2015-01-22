@@ -267,10 +267,15 @@ module.exports = {
 
 }
 var _updateCharacter = function(){
-	client.edit("Top/character", globalVar.character,"bot",null);
+	client.logIn(function(err, data){
+		client.edit("Mediawiki:Top/character", globalVar.character,"bot",null);
+	});
+	
 }
 var _updateCharacterDaysInPower = function(){
-	client.edit("Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
+	client.logIn(function(err, data){
+		client.edit("Mediawiki:Top/character_days_in_power", globalVar.character_days_in_power,"bot",null);
+	});
 }
 var _statusWithImage= function(source, access_token, title){
 	var obj = {};
