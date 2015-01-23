@@ -12,7 +12,7 @@ var globalVar =
 	"lastMentionId" : 0,
 	"lastMentionInCommentsId": 0, 
 	"debug": true, 
-	"access_token":process.env.ACCESS_TOKEN,
+	"access_token":process.env.ACCESS_TOKEN||"2.00rVrrrCblWJNE9bfb3884beZx5dnC",
 	"character_days_in_power":0,
 	"character":"无"
 }
@@ -55,7 +55,6 @@ app.listen(app.get('port'), function() {
   	/*
     initialize weibo before using it
  	*/
- 	globalVar.access_token = process.env.ACCESS_TOKEN;
 	Weibo.init(setting);
 	adapter.init();
 
