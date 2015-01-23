@@ -55,6 +55,7 @@ app.listen(app.get('port'), function() {
   	/*
     initialize weibo before using it
  	*/
+ 	globalVar.access_token = process.env.ACCESS_TOKEN;
 	Weibo.init(setting);
 	adapter.init();
 
