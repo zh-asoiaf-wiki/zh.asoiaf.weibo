@@ -12,7 +12,7 @@ var globalVar =
 	"lastMentionId" : 0,
 	"lastMentionInCommentsId": 0, 
 	"debug": true, 
-	"access_token":process.env.access_token,
+	"access_token":"2.00rVrrrCblWJNE9bfb3884beZx5dnC",
 	"character_days_in_power":0,
 	"character":"无"
 }
