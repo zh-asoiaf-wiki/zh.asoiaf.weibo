@@ -13,8 +13,8 @@ var bot = require('nodemw');
     "server": 'zh.asoiaf.wikia.com',  // host name of MediaWiki-powered site
     "path": '',                  // path to api.php script
     "debug": false ,                // is more verbose when set to true
-    "username": process.env.PASSWORD,
-	"password": process.env.USERNAME
+    "username": process.env.USERNAME,
+	"password": process.env.PASSWORD
   });
 var globalVar = {
 		"debug": true, 
@@ -227,7 +227,7 @@ module.exports = {
 								msg += "http://zh.asoiaf.wikia.com/wiki/Special:Top/most_visited";
 								imageurl = data.thumbnail;	
 								globalVar.character = data.title;	
-								globalVar.character_days_in_power = 1;	
+								globalVar.character_days_in_power = 2;	
 								_updateCharacter();	
 								_updateCharacterDaysInPower();					
 							}
