@@ -31,7 +31,7 @@ Weibo.init(setting);
 //Weibo.authorize();
 
 var jsonParas = {
-    code:"3dffa0e24cd416ee5d18a2c202e884fc",
+    code:"588775a24ef9d89f3efb8ac3a6ef74d4",
     grant_type:"authorization_code"
 };
 
