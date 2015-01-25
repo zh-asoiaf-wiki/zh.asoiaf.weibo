@@ -136,6 +136,10 @@ app.listen(app.get('port'), function() {
 				var username = data.statuses[mention].user.screen_name;
 				var content = data.statuses[mention].text;
 				if (data.statuses[mention].retweeted_status!=null){
+					if (content.indexOf('@冰与火之歌中文维基') == -1 ){
+						return;
+						/* Hard code is bad... To be changed*/
+					}
 					if (content.indexOf('@冰与火之歌中文维基') > content.indexOf('//') && content.indexOf('//')!= -1 ){
 						return;
 						/* Hard code is bad... To be changed*/

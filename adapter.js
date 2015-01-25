@@ -54,7 +54,7 @@ module.exports = {
 		var id = arg_id;
 		var cid = arg_cid;
 		wikia.info({title:query}, function(err, obj){
-			if((err=''||err==null) && obj != null){
+			if((err==''||err==null) && obj != null){
 				if (cid == null){
 					var para = {
 					    "source": source,
@@ -134,7 +134,7 @@ module.exports = {
 	},
 	status: function(source, access_token, content, username){
 		wikia.info({title:content}, function(err, obj){
-			if((err=''||err==null) && obj != null){
+			if((err==''||err==null) && obj != null){
 				var para = {
 				    "source": source,
 				    "access_token": access_token,
