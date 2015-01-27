@@ -25,8 +25,10 @@ var globalVar = {
 	};
 module.exports = {
 	init: function(){
-		console.log(process.env.USERNAME);
-		console.log(process.env.PASSWORD);
+		if(globalVar.debug){
+			console.log(process.env.USERNAME);
+			console.log(process.env.PASSWORD);
+		}	
 		client.getArticle("Mediawiki:top/character", function(err, data){
 			if (err){
 				if(globalVar.debug){
