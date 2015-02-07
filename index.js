@@ -80,7 +80,9 @@ app.listen(app.get('port'), function() {
 		if (globalVar.debug){
 			console.log(data);
 		}
-		globalVar.lastMentionInCommentsId = data.comments[0].id;
+		if (data.comments[0] != undefined){
+			globalVar.lastMentionInCommentsId = data.comments[0].id;
+		}
 	});
 	if(globalVar.debug){
  		//adapter.random(Weibo.appKey.appKey,globalVar.access_token);
