@@ -40,9 +40,6 @@ app.get('/access_token', function(request, response) {
 	};
 
 	Weibo.OAuth2.access_token(jsonParas,function(data){
-		if(globalVar.debug){
-			console.log(data);
-		}
 	    globalVar.access_token = data.access_token;
 	    response.send('Authenticated!');
 	});
