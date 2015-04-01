@@ -65,7 +65,9 @@ app.listen(app.get('port'), function() {
 		if (globalVar.debug){
 			console.log(data);
 		}
-		globalVar.lastMentionId = data.statuses[0].id;
+		if (data.status[0] != undefined){
+			globalVar.lastMentionId = data.statuses[0].id;
+		}
 	});
 	var para = {
 	    "source": Weibo.appKey.appKey,
