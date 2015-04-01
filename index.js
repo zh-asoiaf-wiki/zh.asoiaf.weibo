@@ -65,7 +65,7 @@ app.listen(app.get('port'), function() {
 		if (globalVar.debug){
 			console.log(data);
 		}
-		if (data.status[0] != undefined){
+		if (data.statuses[0] != undefined){
 			globalVar.lastMentionId = data.statuses[0].id;
 		}
 	});
