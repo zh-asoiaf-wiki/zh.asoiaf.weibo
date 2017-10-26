@@ -1,5 +1,5 @@
 var Weibo = require('nodeweibo');    // require('nodeweibo') also works if you have installed nodeweibo via npm
-var setting = require('./setting.json');   // get setting (appKey, appSecret, etc.)
+var setting = require('./setting.json');   // get setting (appKey, appSecret, etc.).
 var sleep = require('sleep');
 var schedule = require('node-schedule');
 var adapter = require('./adapter.js');
